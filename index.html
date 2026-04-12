@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wicked: Crónicas de Oz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-overlay">
+            <h1>Wicked: Crónicas de Oz</h1>
+            <p>Un viaje inmersivo por la Tierra de las Maravillas</p>
+        </div>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#historia" class="nav-button">El Comienzo</a></li>
+                <li><a href="#multimedia" class="nav-button">Momentos Mágicos</a></li>
+                <li><a href="#postal" class="nav-button">Enviar Recuerdo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="historia" class="glass-card">
+            <h2 class="title-oz">Donde la Magia Nace</h2>
+            <p>
+                Bienvenidos a las <strong>Crónicas de Oz</strong>, un rincón donde la realidad se entrelaza con lo imposible. Mucho antes de que los vientos trajeran a Dorothy, dos vidas se cruzaron en la mítica Universidad de Shiz, forjando una amistad que cambiaría el destino de este reino para siempre.
+            </p>
+            <p>
+                Acompaña a nuestras protagonistas, Elphaba y Glinda, mientras navegan por la ambición, la popularidad y el verdadero significado del bien y el mal. Prepárate para una experiencia inmersiva que te llevará desde los pasillos dorados de Shiz hasta el resplandor eterno de la Ciudad Esmeralda.
+            </p>
+        </section>
+
+        <section id="multimedia" class="glass-card">
+            <h2 class="title-oz">Hechizos Visuales y Sonoros</h2>
+            <div class="media-grid">
+                
+                <article class="card">
+                    <h3>El Baile de la Libertad</h3>
+                    <p class="video-intro">"Nada importa realmente cuando decides vivir al ritmo de tus propios pasos."</p>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/jniq78mKKcM" 
+                            title="Dancing Through Life" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Desafiando la Gravedad</h3>
+                    <p class="video-intro">"El momento en que Elphaba decide que no hay límites que no pueda superar."</p>
+                    <div class="audio-box">
+                        <audio controls class="full-width">
+                            <source src="sound/Defying Gravity.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el audio.
+                        </audio>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="postal" class="glass-card">
+            <h2 class="title-oz">Captura un Instante de Oz</h2>
+            
+            <div id="form-container">
+                <form class="postal-form" id="wicked-form">
+                    
+                    <fieldset>
+                        <legend>Selecciona tu destino favorito en Oz:</legend>
+                        <div class="grid-postales">
+                            <label class="postal-option">
+                                <input type="radio" name="postal" value="shiz" required>
+                                <div class="postal-content">
+                                    <img src="img/Shiz University.jpg" alt="Universidad de Shiz">
+                                    <span>Universidad de Shiz</span>
+                                </div>
+                            </label>
+
+                            <label class="postal-option">
+                                <input type="radio" name="postal" value="munchkin">
+                                <div class="postal-content">
+                                    <img src="img/Munchkinland.jpg" alt="Pueblo Munchkin">
+                                    <span>Pueblo de los Munchkins</span>
+                                </div>
+                            </label>
+
+                            <label class="postal-option">
+                                <input type="radio" name="postal" value="train">
+                                <div class="postal-content">
+                                    <img src="img/Tren Station.jpg" alt="Estación de Tren">
+                                    <span>Estación del Expreso</span>
+                                </div>
+                            </label>
+
+                            <label class="postal-option">
+                                <input type="radio" name="postal" value="yellow">
+                                <div class="postal-content">
+                                    <img src="img/Yellow Road.jpg" alt="Camino de Baldosas Amarillas">
+                                    <span>Camino de Baldosas Amarillas</span>
+                                </div>
+                            </label>
+
+                            <label class="postal-option">
+                                <input type="radio" name="postal" value="oz-castle">
+                                <div class="postal-content">
+                                    <img src="img/OZ Castle.jpg" alt="Ciudad Esmeralda">
+                                    <span>Ciudad Esmeralda</span>
+                                </div>
+                            </label>
+
+                            <label class="postal-option">
+                                <input type="radio" name="postal" value="witch">
+                                <div class="postal-content">
+                                    <img src="img/Castle Wicked Witch.jpg" alt="Castillo Bruja">
+                                    <span>Fortaleza de la Bruja</span>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Información de envío por Tornado:</legend>
+                        <div class="envio-detalles">
+                            <div class="form-group">
+                                <label for="destinatario">Destinatario:</label>
+                                <input type="text" id="destinatario" name="destinatario" required placeholder="¿A quién se la envías?">
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion">Dirección de entrega:</label>
+                                <input type="text" id="direccion" name="direccion" required placeholder="Ciudad, País o Calle">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dedicatoria">Escribe tu mensaje mágico:</label>
+                            <textarea id="dedicatoria" name="dedicatoria" required placeholder="¿Qué le dirías al mundo desde aquí?"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-oz">Enviar por Tornado</button>
+                </form>
+            </div>
+
+            <div id="success-screen" style="display: none; text-align: center; padding: 50px;">
+                <div class="loader"></div>
+                <h2 style="color: var(--oz-gold); margin-top: 20px;">¡Enviando a través del Tornado!</h2>
+                <p>Tu postal está cruzando el desierto mortal hacia su destino...</p>
+                <div id="postal-preview" style="margin-top: 30px; border: 2px dashed var(--oz-gold); padding: 30px; border-radius: 15px; background: rgba(0,0,0,0.3);">
+                    <p style="font-size: 1.5rem;">✅</p>
+                    <p id="msg-confirmacion" style="font-size: 1.2rem;"></p>
+                    <button onclick="location.reload()" class="btn-oz" style="width: auto; padding: 10px 40px; margin-top: 20px;">Enviar otra postal</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Crónicas de Oz - Proyecto Multimedia URJC</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const wickedForm = document.getElementById('wicked-form');
+            if (wickedForm) {
+                wickedForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const nombre = document.getElementById('destinatario').value;
+                    const formContainer = document.getElementById('form-container');
+                    const successScreen = document.getElementById('success-screen');
+                    const msgConfirmacion = document.getElementById('msg-confirmacion');
+                    const loader = document.querySelector('.loader');
+
+                    formContainer.style.display = 'none';
+                    successScreen.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        if (loader) loader.style.display = 'none';
+                        msgConfirmacion.innerHTML = `¡Postal enviada! Tu mensaje para <strong>${nombre}</strong> ha desafiado a la gravedad con éxito.`;
+                    }, 2500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
