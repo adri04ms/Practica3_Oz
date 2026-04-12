@@ -247,3 +247,17 @@ legend {
     font-size: 0.9rem;
     letter-spacing: 1px;
 }
+
+.audio-box {
+    background: #1a1a1a; /* Fondo casi negro para que resalte el verde */
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #008000; /* Borde verde esmeralda */
+    box-shadow: 0 0 20px rgba(0, 128, 0, 0.3); /* Resplandor verde */
+    margin: 20px 0;
+}
+
+.full-width {
+    width: 100%;
+    filter: invert(100%) hue-rotate(90deg) brightness(1.5); /* ¡Este truco lo vuelve verde! */
+}
