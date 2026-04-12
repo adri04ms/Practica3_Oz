@@ -43,7 +43,7 @@
                     <div class="video-container">
                         <iframe 
                             src="https://www.youtube.com/embed/jniq78mKKcM" 
-                            title="Dancing Through Life" 
+                            title="Fragmento de la película Wicked: Dancing Through Life" 
                             allowfullscreen>
                         </iframe>
                     </div>
@@ -53,10 +53,12 @@
                     <h3>Desafiando la Gravedad</h3>
                     <p class="video-intro">"El momento en que Elphaba decide que no hay límites que no pueda superar."</p>
                     <div class="audio-box">
-                        <audio controls class="full-width">
+                        <label for="audio-defying" class="sr-only">Reproductor de audio: Canción Defying Gravity</label>
+                        <audio id="audio-defying" controls class="full-width">
                             <source src="sound/Defying Gravity.mp3" type="audio/mpeg">
                             Tu navegador no soporta el audio.
                         </audio>
+                        <p style="font-size: 0.8rem; color: #ccc; margin-top: 10px;"><em>Transcripción: Elphaba canta sobre volar libre y desafiar las normas de Oz.</em></p>
                     </div>
                 </article>
             </div>
@@ -71,50 +73,50 @@
                     <fieldset>
                         <legend>Selecciona tu destino favorito en Oz:</legend>
                         <div class="grid-postales">
-                            <label class="postal-option">
-                                <input type="radio" name="postal" value="shiz" required>
+                            <label class="postal-option" for="shiz">
+                                <input type="radio" name="postal" id="shiz" value="shiz" required>
                                 <div class="postal-content">
-                                    <img src="img/Shiz University.jpg" alt="Universidad de Shiz">
+                                    <img src="img/Shiz University.jpg" alt="Fachada de la Universidad de Shiz con torres doradas">
                                     <span>Universidad de Shiz</span>
                                 </div>
                             </label>
 
-                            <label class="postal-option">
-                                <input type="radio" name="postal" value="munchkin">
+                            <label class="postal-option" for="munchkin">
+                                <input type="radio" name="postal" id="munchkin" value="munchkin">
                                 <div class="postal-content">
-                                    <img src="img/Munchkinland.jpg" alt="Pueblo Munchkin">
+                                    <img src="img/Munchkinland.jpg" alt="Pueblo Munchkin con casas coloridas y flores">
                                     <span>Pueblo de los Munchkins</span>
                                 </div>
                             </label>
 
-                            <label class="postal-option">
-                                <input type="radio" name="postal" value="train">
+                            <label class="postal-option" for="train">
+                                <input type="radio" name="postal" id="train" value="train">
                                 <div class="postal-content">
-                                    <img src="img/Tren Station.jpg" alt="Estación de Tren">
+                                    <img src="img/Tren Station.jpg" alt="Estación de tren con el Expreso de Oz esperando">
                                     <span>Estación del Expreso</span>
                                 </div>
                             </label>
 
-                            <label class="postal-option">
-                                <input type="radio" name="postal" value="yellow">
+                            <label class="postal-option" for="yellow">
+                                <input type="radio" name="postal" id="yellow" value="yellow">
                                 <div class="postal-content">
-                                    <img src="img/Yellow Road.jpg" alt="Camino de Baldosas Amarillas">
+                                    <img src="img/Yellow Road.jpg" alt="El famoso camino de baldosas amarillas que serpentea por el bosque">
                                     <span>Camino de Baldosas Amarillas</span>
                                 </div>
                             </label>
 
-                            <label class="postal-option">
-                                <input type="radio" name="postal" value="oz-castle">
+                            <label class="postal-option" for="oz-castle">
+                                <input type="radio" name="postal" id="oz-castle" value="oz-castle">
                                 <div class="postal-content">
-                                    <img src="img/OZ Castle.jpg" alt="Ciudad Esmeralda">
+                                    <img src="img/OZ Castle.jpg" alt="Vista panorámica de la Ciudad Esmeralda brillando en verde">
                                     <span>Ciudad Esmeralda</span>
                                 </div>
                             </label>
 
-                            <label class="postal-option">
-                                <input type="radio" name="postal" value="witch">
+                            <label class="postal-option" for="witch">
+                                <input type="radio" name="postal" id="witch" value="witch">
                                 <div class="postal-content">
-                                    <img src="img/Castle Wicked Witch.jpg" alt="Castillo Bruja">
+                                    <img src="img/Castle Wicked Witch.jpg" alt="Oscuro y picudo castillo de la Bruja del Oeste">
                                     <span>Fortaleza de la Bruja</span>
                                 </div>
                             </label>
@@ -144,12 +146,10 @@
                 </form>
             </div>
 
-            <div id="success-screen" style="display: none; text-align: center; padding: 50px;">
+            <div id="success-screen" style="display: none; text-align: center; padding: 50px;" aria-live="polite">
                 <div class="loader"></div>
-                <h2 style="color: var(--oz-gold); margin-top: 20px;">¡Enviando a través del Tornado!</h2>
-                <p>Tu postal está cruzando el desierto mortal hacia su destino...</p>
-                <div id="postal-preview" style="margin-top: 30px; border: 2px dashed var(--oz-gold); padding: 30px; border-radius: 15px; background: rgba(0,0,0,0.3);">
-                    <p style="font-size: 1.5rem;">✅</p>
+                <h2 style="color: gold; margin-top: 20px;">¡Enviando a través del Tornado!</h2>
+                <div id="postal-preview" style="margin-top: 30px; border: 2px dashed gold; padding: 30px; border-radius: 15px; background: rgba(0,0,0,0.3);">
                     <p id="msg-confirmacion" style="font-size: 1.2rem;"></p>
                     <button onclick="location.reload()" class="btn-oz" style="width: auto; padding: 10px 40px; margin-top: 20px;">Enviar otra postal</button>
                 </div>
@@ -171,13 +171,11 @@
                     const formContainer = document.getElementById('form-container');
                     const successScreen = document.getElementById('success-screen');
                     const msgConfirmacion = document.getElementById('msg-confirmacion');
-                    const loader = document.querySelector('.loader');
 
                     formContainer.style.display = 'none';
                     successScreen.style.display = 'block';
                     
                     setTimeout(() => {
-                        if (loader) loader.style.display = 'none';
                         msgConfirmacion.innerHTML = `¡Postal enviada! Tu mensaje para <strong>${nombre}</strong> ha desafiado a la gravedad con éxito.`;
                     }, 2500);
                 });
