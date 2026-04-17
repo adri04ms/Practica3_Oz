@@ -147,6 +147,10 @@ nav ul {
     transition: 0.3s;
     text-align: center;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .postal-content img {
