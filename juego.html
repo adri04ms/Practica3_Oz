@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Oráculo de Oz - Wicked</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-overlay">
+            <h1>El Oráculo de Oz</h1>
+            <p>Descubre tu verdadera esencia mágica</p>
+        </div>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html" class="nav-button">Inicio</a></li>
+                <li><a href="juego.html" class="nav-button">El Oráculo</a></li>
+                <li><a href="index.html#postal" class="nav-button">Enviar Recuerdo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="glass-card">
+            <h2 class="title-oz">¿Quién serías en la Tierra de Oz?</h2>
+            <p style="margin-bottom: 30px;">
+                Responde a estas preguntas y el Oráculo revelará si tu destino está ligado a la 
+                brillantez de Glinda o a la valentía de Elphaba.
+            </p>
+
+            <form id="quiz-oz">
+                <fieldset style="margin-bottom: 30px; border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; border-radius: 15px;">
+                    <legend style="color: var(--oz-gold); padding: 0 10px; font-weight: bold;">¿Cómo reaccionas ante una injusticia?</legend>
+                    <div style="margin-top: 15px;">
+                        <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                            <input type="radio" name="p1" value="elphaba" required> 
+                            Alzo la voz y lucho por lo que es correcto.
+                        </label>
+                        <label style="display: block; cursor: pointer;">
+                            <input type="radio" name="p1" value="glinda"> 
+                            Intento solucionarlo con diplomacia y amabilidad.
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset style="margin-bottom: 30px; border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; border-radius: 15px;">
+                    <legend style="color: var(--oz-gold); padding: 0 10px; font-weight: bold;">¿Qué color elegirías para tu magia?</legend>
+                    <div style="margin-top: 15px;">
+                        <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                            <input type="radio" name="p2" value="elphaba" required> 
+                            Verde esmeralda intenso.
+                        </label>
+                        <label style="display: block; cursor: pointer;">
+                            <input type="radio" name="p2" value="glinda"> 
+                            Rosa brillante y purpurina.
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="button" onclick="revelarDestino()" class="btn-oz">Consultar al Oráculo</button>
+            </form>
+
+            <div id="resultado-juego" 
+                 aria-live="polite" 
+                 style="margin-top: 40px; padding: 20px; border-radius: 15px; text-align: center; font-size: 1.3rem; min-height: 50px;">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Crónicas de Oz - Proyecto Multimedia URJC</p>
+            <div class="conformity-badges">
+                <img height="31" width="88" src="https://www.w3.org/WAI/WCAG22/wcag2.2AA"
+                    alt="Level AA conformance, W3C Web Content Accessibility Guidelines 2.2">
+                <p class="accessibility-statement">Nivel de conformidad: <strong>WCAG 2.2 AA</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function revelarDestino() {
+            const p1 = document.querySelector('input[name="p1"]:checked');
+            const p2 = document.querySelector('input[name="p2"]:checked');
+            const resultadoDiv = document.getElementById('resultado-juego');
+
+            if (!p1 || !p2) {
+                resultadoDiv.style.color = "#ff4d4d";
+                resultadoDiv.innerText = "⚠️ Por favor, responde a ambas preguntas.";
+                return;
+            }
+
+            let puntosElphaba = 0;
+            if (p1.value === "elphaba") puntosElphaba++;
+            if (p2.value === "elphaba") puntosElphaba++;
+
+            resultadoDiv.style.border = "2px solid var(--oz-gold)";
+            resultadoDiv.style.background = "rgba(0,0,0,0.4)";
+            
+            if (puntosElphaba >= 1) {
+                resultadoDiv.style.color = "var(--oz-emerald)";
+                resultadoDiv.innerHTML = "✨ <strong>¡Eres Elphaba!</strong><br>Eres valiente y fiel a tus principios. No tienes miedo de desafiar la gravedad.";
+            } else {
+                resultadoDiv.style.color = "var(--oz-gold)";
+                resultadoDiv.innerHTML = "💖 <strong>¡Eres Glinda!</strong><br>Eres optimista y bondadosa. Tu luz ayuda a que el mundo sea un lugar más feliz.";
+            }
+        }
+    </script>
+</body>
+</html>
