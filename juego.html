@@ -83,6 +83,18 @@
     </footer>
 
     <script>
+        // Marca el botón de navegación activo según la página actual
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+            document.querySelectorAll('.nav-button').forEach(function (btn) {
+                const href = btn.getAttribute('href');
+                if ((href === 'juego.html' || href === './juego.html') && currentPage === 'juego.html') {
+                    btn.classList.add('active');
+                }
+            });
+        });
+
         function revelarDestino() {
             const p1 = document.querySelector('input[name="p1"]:checked');
             const p2 = document.querySelector('input[name="p2"]:checked');
