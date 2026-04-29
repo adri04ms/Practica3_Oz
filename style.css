@@ -143,7 +143,20 @@ nav ul {
 }
 
 .postal-option input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.postal-option input:focus + .postal-content {
+    outline: 3px solid var(--oz-gold);
+    outline-offset: 4px;
+}
+
+.btn-oz:focus {
+    outline: 3px solid var(--oz-gold);
+    outline-offset: 4px;
 }
 
 .postal-content {

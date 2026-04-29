@@ -61,7 +61,7 @@
                     </div>
                 </fieldset>
 
-                <button type="button" onclick="revelarDestino()" class="btn-oz">Consultar al Oráculo</button>
+                <button type="submit" class="btn-oz">Consultar al Oráculo</button>
             </form>
 
             <div id="resultado-juego" 
@@ -93,6 +93,11 @@
                     btn.classList.add('active');
                 }
             });
+        });
+
+        document.getElementById('quiz-oz').addEventListener('submit', function(e) {
+            e.preventDefault();
+            revelarDestino();
         });
 
         function revelarDestino() {
